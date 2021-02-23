@@ -85,7 +85,7 @@ Item {
         ImageButton {
             id: editButton
 
-            visible: (Settings.buttonsInTimeline && model.isEditable) || model.isEdited
+            visible: (Settings.buttonsInTimeline && model.isEditable && hoverHandler.hovered) || model.isEdited
             buttonTextColor: chat.model.edit == model.id ? colors.highlight : colors.buttonText
             Layout.alignment: Qt.AlignRight | Qt.AlignTop
             Layout.preferredHeight: 16
@@ -104,7 +104,7 @@ Item {
         EmojiButton {
             id: reactButton
 
-            visible: Settings.buttonsInTimeline
+            visible: Settings.buttonsInTimeline && hoverHandler.hovered
             Layout.alignment: Qt.AlignRight | Qt.AlignTop
             Layout.preferredHeight: 16
             width: 16
@@ -118,7 +118,7 @@ Item {
         ImageButton {
             id: replyButton
 
-            visible: Settings.buttonsInTimeline
+            visible: Settings.buttonsInTimeline && hoverHandler.hovered
             Layout.alignment: Qt.AlignRight | Qt.AlignTop
             Layout.preferredHeight: 16
             width: 16
@@ -132,7 +132,7 @@ Item {
         ImageButton {
             id: optionsButton
 
-            visible: Settings.buttonsInTimeline
+            visible: Settings.buttonsInTimeline && hoverHandler.hovered
             Layout.alignment: Qt.AlignRight | Qt.AlignTop
             Layout.preferredHeight: 16
             width: 16
