@@ -86,6 +86,7 @@ Item {
             id: editButton
 
             visible: (Settings.buttonsInTimeline && model.isEditable && hoverHandler.hovered) || model.isEdited
+            enabled: model.isEditable
             buttonTextColor: chat.model.edit == model.id ? colors.highlight : colors.buttonText
             Layout.alignment: Qt.AlignRight | Qt.AlignTop
             Layout.preferredHeight: 16
