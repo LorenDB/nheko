@@ -10,7 +10,6 @@ AbstractButton {
     property string image: undefined
     property color highlightColor: colors.highlight
     property color buttonTextColor: colors.buttonText
-    property bool changeColorOnHover: true
 
     focusPolicy: Qt.NoFocus
     width: 16
@@ -21,14 +20,14 @@ AbstractButton {
 
         // Workaround, can't get icon.source working for now...
         anchors.fill: parent
-        source: image != "" ? ("image://colorimage/" + image + "?" + ((button.hovered && changeColorOnHover) ? highlightColor : buttonTextColor)) : ""
+        source: image != "" ? ("image://colorimage/" + image + "?" + ((button.hovered && enabled) ? highlightColor : buttonTextColor)) : ""
     }
 
     CursorShape {
         id: mouseArea
 
         anchors.fill: parent
-        cursorShape: Qt.PointingHandCursor
+        cursorShape: button.enabled ? Qt.PointingHandCursor : Qt.ArrowCursor
     }
 
     Ripple {

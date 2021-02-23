@@ -8,7 +8,7 @@ ImageButton {
     width: 16
     height: 16
     hoverEnabled: true
-    changeColorOnHover: (model.state == MtxEvent.Read)
+    enabled: (model.state == MtxEvent.Read)
     cursor: (model.state == MtxEvent.Read) ? Qt.PointingHandCursor : Qt.ArrowCursor
     ToolTip.visible: hovered && model.state != MtxEvent.Empty
     ToolTip.text: {
